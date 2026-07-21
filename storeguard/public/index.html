@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StoreGuard — Retail CCTV Audit</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo-dot"></span>
+      <span>StoreGuard</span>
+      <span class="subtitle">Retail CCTV Audit</span>
+    </div>
+    <div class="stats" id="stats">
+      <div class="stat"><span class="stat-num" id="stat-total">0</span><span class="stat-label">Total</span></div>
+      <div class="stat stat-high"><span class="stat-num" id="stat-confirmed">0</span><span class="stat-label">Confirmed Theft</span></div>
+      <div class="stat stat-med"><span class="stat-num" id="stat-suspicious">0</span><span class="stat-label">Suspicious</span></div>
+      <div class="stat stat-low"><span class="stat-num" id="stat-cleared">0</span><span class="stat-label">Cleared</span></div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <section class="card">
+        <h3>New Audit</h3>
+        <label class="drop-zone" id="drop-zone">
+          <input type="file" id="file-input" accept="image/*,video/*" hidden />
+          <div class="drop-inner">
+            <strong id="drop-title">Drop screenshot or clip</strong>
+            <span id="drop-sub">image or video — from Hik-Connect</span>
+          </div>
+        </label>
+
+        <label class="field">
+          <span>Store</span>
+          <select id="store-select"></select>
+        </label>
+
+        <label class="field">
+          <span>Camera location</span>
+          <input id="camera-input" type="text" placeholder="e.g. Front counter" />
+        </label>
+
+        <label class="field">
+          <span>Captured at</span>
+          <input id="datetime-input" type="datetime-local" />
+        </label>
+
+        <button id="analyse-btn" class="primary">Analyse</button>
+        <div id="analyse-status" class="status"></div>
+      </section>
+
+      <section class="card incidents-card">
+        <h3>Incidents <span class="muted">(last 3 days)</span></h3>
+        <ul id="incident-list" class="incident-list"></ul>
+      </section>
+    </aside>
+
+    <section class="detail" id="detail">
+      <div class="empty" id="empty-state">
+        <p>Select or upload an incident to review.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

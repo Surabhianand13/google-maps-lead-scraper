@@ -1,0 +1,16 @@
+{
+  "name": "storeguard",
+  "version": "1.0.0",
+  "description": "Retail CCTV audit app powered by Claude Vision",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.33.5"
+  }
+}
